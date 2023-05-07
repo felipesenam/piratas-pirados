@@ -17,6 +17,13 @@ config/icon="res://icon.png"
 
 common/drop_mouse_on_gui_input_disabled=true
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Scenario"
+2d_physics/layer_3="Environment"
+2d_physics/layer_4="Enemies"
+
 [physics]
 
 common/enable_pause_aware_picking=true
