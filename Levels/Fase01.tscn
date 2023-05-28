@@ -1,8 +1,56 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tiles/Arquitetura.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Personagens/Navio/ship (2).png" type="Texture" id=3]
+[ext_resource path="res://Mechanic/Door.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "horizontal_vertical"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 90.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "vertical_horizontal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 0.0 ]
+}
 
 [node name="Fase01" instance=ExtResource( 1 )]
 
@@ -29,5 +77,170 @@ tile_data = PoolIntArray( -6619036, 2, 65540, -6619035, 2, 196611, -6619034, 2, 
 position = Vector2( 3561, -561 )
 texture = ExtResource( 3 )
 
-[node name="Player" parent="." index="2"]
+[node name="Door16" parent="Gates" index="0" instance=ExtResource( 5 )]
+position = Vector2( -138, 1102 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="AnimationPlayer" parent="Gates/Door16/Body" index="3"]
+anims/RESET = SubResource( 1 )
+anims/horizontal_vertical = SubResource( 2 )
+anims/vertical_horizontal = SubResource( 3 )
+
+[node name="Light2D" parent="Gates/Door16" index="1"]
+position = Vector2( 784, 49.9997 )
+scale = Vector2( 52.625, 62.4375 )
+enabled = true
+
+[node name="Door" parent="Gates" index="1" instance=ExtResource( 5 )]
+position = Vector2( -122, 734 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door" index="1"]
+position = Vector2( 906, -1130 )
+scale = Vector2( 43.4375, 43.9375 )
+
+[node name="Door2" parent="Gates" index="2" instance=ExtResource( 5 )]
+position = Vector2( 87, 175 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door2" index="1"]
+position = Vector2( 96, -478 )
+scale = Vector2( 8.875, 19.9375 )
+
+[node name="Door3" parent="Gates" index="3" instance=ExtResource( 5 )]
+position = Vector2( 86, -66 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door3" index="1"]
+position = Vector2( 528, -1016 )
+scale = Vector2( 87.5, 38.125 )
+
+[node name="Door4" parent="Gates" index="4" instance=ExtResource( 5 )]
+position = Vector2( 796, -399 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door4" index="1"]
+position = Vector2( 97.0444, -746.193 )
+scale = Vector2( 9.15425, 31.0746 )
+
+[node name="Door5" parent="Gates" index="5" instance=ExtResource( 5 )]
+position = Vector2( 1181, -400 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door5" index="1"]
+position = Vector2( 2200.56, -957.614 )
+scale = Vector2( 107.375, 37.5424 )
+
+[node name="Door6" parent="Gates" index="6" instance=ExtResource( 5 )]
+position = Vector2( 1180, 641 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door6" index="1"]
+position = Vector2( 101.866, 439.31 )
+scale = Vector2( 8.438, 20.875 )
+
+[node name="Door7" parent="Gates" index="7" instance=ExtResource( 5 )]
+position = Vector2( 955, 640 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door7" index="1"]
+position = Vector2( 112.11, 456.612 )
+scale = Vector2( 25.438, 21.188 )
+
+[node name="Door8" parent="Gates" index="8" instance=ExtResource( 5 )]
+position = Vector2( 1676, 433 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door8" index="1"]
+position = Vector2( 103.826, -505.916 )
+scale = Vector2( 8.89348, 23.2876 )
+
+[node name="Door9" parent="Gates" index="9" instance=ExtResource( 5 )]
+position = Vector2( 1932, 433 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door9" index="1"]
+position = Vector2( 102.429, -616.79 )
+scale = Vector2( 24.2198, 27.1459 )
+
+[node name="Door10" parent="Gates" index="10" instance=ExtResource( 5 )]
+position = Vector2( 2117, 605 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door10" index="1"]
+position = Vector2( 806, 610 )
+scale = Vector2( 40.0625, 22.8125 )
+
+[node name="Door11" parent="Gates" index="11" instance=ExtResource( 5 )]
+position = Vector2( 2573, 801 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door11" index="1"]
+position = Vector2( -415.309, -991.658 )
+scale = Vector2( 38.7704, 40.6244 )
+
+[node name="Door12" parent="Gates" index="12" instance=ExtResource( 5 )]
+position = Vector2( 2005, 302 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door12" index="1"]
+position = Vector2( 100, -612 )
+scale = Vector2( 10.125, 27.125 )
+
+[node name="Door13" parent="Gates" index="13" instance=ExtResource( 5 )]
+position = Vector2( 2006, -2 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door13" index="1"]
+position = Vector2( 262, -1104 )
+scale = Vector2( 42.8125, 42.625 )
+
+[node name="Door14" parent="Gates" index="14" instance=ExtResource( 5 )]
+position = Vector2( 2364, -479 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door14" index="1"]
+position = Vector2( 106.574, -392.961 )
+scale = Vector2( 9.46348, 20.997 )
+
+[node name="Door15" parent="Gates" index="15" instance=ExtResource( 5 )]
+position = Vector2( 2572, -479 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" parent="Gates/Door15" index="1"]
+position = Vector2( 531.745, -2572.05 )
+scale = Vector2( 83.8424, 112.6 )
+energy = 1.15
+
+[node name="CanvasModulate" parent="Lights" index="0"]
+visible = false
+color = Color( 0.117647, 0, 0, 1 )
+
+[node name="Player" parent="." index="4"]
 position = Vector2( -73, 1015 )
+
+[editable path="Gates/Door16"]
+[editable path="Gates/Door"]
+[editable path="Gates/Door2"]
+[editable path="Gates/Door3"]
+[editable path="Gates/Door4"]
+[editable path="Gates/Door5"]
+[editable path="Gates/Door6"]
+[editable path="Gates/Door7"]
+[editable path="Gates/Door8"]
+[editable path="Gates/Door9"]
+[editable path="Gates/Door10"]
+[editable path="Gates/Door11"]
+[editable path="Gates/Door12"]
+[editable path="Gates/Door13"]
+[editable path="Gates/Door14"]
+[editable path="Gates/Door15"]

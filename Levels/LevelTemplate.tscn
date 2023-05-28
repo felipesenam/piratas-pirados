@@ -8,4 +8,10 @@
 
 [node name="Objetivos" type="Node" parent="."]
 
+[node name="Gates" type="Node" parent="."]
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Lights"]
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
