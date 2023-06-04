@@ -4,6 +4,8 @@ var direction = Vector2(0, 0)
 export var speed = 100
 var facing
 
+var damage = 0
+var has_sword = false
 
 func _physics_process(delta):
 	set_movement()
@@ -34,4 +36,8 @@ func get_animation():
 		$AnimatedSprite.frame = 0
 		$AnimatedSprite.stop()
 	else:
-		$AnimatedSprite.play("run_" + facing)
+		if has_sword:
+			$AnimatedSprite.play("sword_" + facing)
+			
+		else:
+			$AnimatedSprite.play("run_" + facing)
