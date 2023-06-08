@@ -13,6 +13,30 @@ func _physics_process(delta):
 	set_animation()
 	move_and_slide(direction * speed)
 
+func receive_attack(damage, facing):
+	health -= damage
+	print("Damage! ",damage, " ",health)
+	if health <= 0:
+		$AnimationPlayer.play("die")
+		set_physics_process(false)
+	
+	apply_knockback(facing)
+	after_attack()
+
+func apply_knockback(facing):
+	print(facing)
+	if facing == "up":
+		position.y -= knockback
+	elif facing == "down":
+		position.y += knockback
+	elif facing == "left":
+		position.x -= knockback
+	elif facing == "right":
+		position.x += knockback
+
+func after_attack():
+	pass
+
 func move_character():
 	pass
 

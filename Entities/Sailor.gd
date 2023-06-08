@@ -11,14 +11,14 @@ func choose_destination():
 		if status == 0:
 			target_path = options[randi() % options.size()]
 		elif status == 1:
-			target_path = get_node("/root").find_node("Player", true, false)
+			target_path = player
 		
 		$NavigationAgent2D.set_target_location(target_path.position)
 
 func move_character():
 	if $NavigationAgent2D.is_navigation_finished() and status == 0:
-		if $MovementTimer.is_stopped():
-			$MovementTimer.start()
+		if $Timers/MovementTimer.is_stopped():
+			$Timers/MovementTimer.start()
 			set_physics_process(false)
 	else:
 		run()
