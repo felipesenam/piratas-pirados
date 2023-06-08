@@ -9,6 +9,12 @@ func move_character():
 	
 	set_direction()
 
+func _process(delta):
+	update_hud()
+
+func update_hud():
+	get_tree().call_group("HUD", "update_health", health)
+
 func _input(event):
 	if Input.is_action_just_pressed("attack") and has_sword:
 		set_physics_process(false)

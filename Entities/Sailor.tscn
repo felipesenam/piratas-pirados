@@ -909,6 +909,8 @@ collision_mask = 15
 script = ExtResource( 1 )
 speed = 100
 health = 10
+damage = 3
+knockback = 50
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )
@@ -931,9 +933,12 @@ anims/run_right = SubResource( 50 )
 anims/run_up = SubResource( 51 )
 
 [node name="CollisionShape2D" parent="AttackArea" index="0"]
-position = Vector2( 0, 25 )
+position = Vector2( 0, -25 )
 scale = Vector2( 3, 1 )
 shape = SubResource( 86 )
+
+[node name="FOV" parent="." index="6"]
+rotation = 3.14159
 
 [node name="CollisionPolygon2D" parent="FOV" index="0"]
 polygon = PoolVector2Array( -4, -2, 4, -2, -48, 10, -100, 210, 0, 240, 100, 210, 48, 10 )

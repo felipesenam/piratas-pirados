@@ -49,11 +49,11 @@ scale = Vector2( 4.875, 5.6875 )
 [node name="Sailor" parent="Enemies" index="0" instance=ExtResource( 6 )]
 position = Vector2( 414, 265 )
 z_index = 1
+damage = 3
 knockback = 50
 
 [node name="CollisionShape2D" parent="Enemies/Sailor/AttackArea" index="0"]
 position = Vector2( 0, -25 )
-scale = Vector2( 3, 1 )
 
 [node name="NavigationAgent2D" parent="Enemies/Sailor" index="4"]
 radius = 10.0
@@ -67,22 +67,11 @@ position = Vector2( 341, 342 )
 [node name="Position2D3" type="Position2D" parent="Enemies/Sailor/Locations" index="2"]
 position = Vector2( 674, 286 )
 
-[node name="MovementTimer" parent="Enemies/Sailor" index="6"]
-wait_time = 2.0
-one_shot = true
+[node name="FOV" parent="Enemies/Sailor" index="6"]
+rotation = 3.14159
 
-[node name="Player" parent="." index="5"]
+[node name="Player" parent="." index="6"]
 position = Vector2( 137, 157 )
-
-[node name="AnimatedSprite" parent="Player" index="0"]
-animation = "die"
-
-[node name="CollisionShape2D" parent="Player/AttackArea" index="0"]
-position = Vector2( 0, 0 )
-scale = Vector2( 1, 1 )
-
-[connection signal="body_entered" from="Enemies/Sailor/FOV" to="Enemies/Sailor" method="_on_FOV_body_entered"]
-[connection signal="body_exited" from="Enemies/Sailor/FOV" to="Enemies/Sailor" method="_on_FOV_body_exited"]
 
 [editable path="Gates/Door"]
 [editable path="Gates/Door2"]

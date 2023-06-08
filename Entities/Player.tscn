@@ -917,7 +917,7 @@ script = ExtResource( 2 )
 speed = 100
 health = 10
 knockback = 50
-max_hp = 0
+max_hp = 10
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 75 )
