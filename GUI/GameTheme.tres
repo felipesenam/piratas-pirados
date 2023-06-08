@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Fontes/alagard_by_pix3m-d6awiwp.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.635294, 0.478431, 0.0980392, 0.839216 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 42
+font_data = ExtResource( 1 )
+
+[resource]
+Button/fonts/font = SubResource( 2 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 4 )
+Label/colors/font_color = Color( 0.145098, 0.145098, 0.478431, 1 )
+Label/fonts/font = SubResource( 5 )
